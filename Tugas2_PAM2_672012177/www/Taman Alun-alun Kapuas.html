@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="UTF-8">
+	<title>Tempat Wisata</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<div data-role="header"> 
+		<h1> Taman Alun-alun Kapuas</h1>
+	</div> 
+	
+	<div data-role="content">
+	<div class="ui-grid-a" id="restau_infos">	
+		<div class="ui-block-a">
+		<h1> Taman Alun-alun Kapuas</h1>
+		<p style="text-align: justify;">Keberadaan Sungai Kapuas tak bisa dipisahkan dari kehidupan warga Pontianak. Selain menjadi jalur transportasi air, sungai ini juga dimanfaatkan tepiannya sebagai sebuah taman untuk rekreasi keluarga. Tempat wisata di Pontianak yang banyak dikunjungi pada sore dan malam hari ini berada di depan kantor walikota.
+		Taman seluas 3 hektar ini memiliki replika Tugu Khatulistiwa di salah satu sudutnya. Selain itu, ada banyak bangku yang bisa Anda gunakan untuk bersantai sambil menikmati sajian kuliner yang dijual di sekitar lokasi.
+		</p>		
+		</div>		
+		<div class="ui-block-b">
+		<p><img src="Taman Alun-alun Kapuas2.jpg"/></p>
+		</div>
+	</div><!-- /grid-a -->
+	<hr/>
+	
+	<div class="ui-grid-a" id="contact_infos">	
+		<div class="ui-block-a">
+		<h2> Alamat</h2>
+		<p>Jalan Rahadi Usman, Pontianak, Kalimantan Barat 78243</p>		
+		</div>		
+		<div class="ui-block-b">
+		<img src="Taman Alun-alun Kapuas3.jpg"/>
+		</div>
+	</div><!-- /grid-a -->
+	<div id="contact_buttons">	
+		<a href="https://www.google.co.id/maps/place/Taman+Alun+Kapuas/@-0.021557,109.339357,17z/data=!3m1!4b1!4m2!3m1!1s0x2e1d585ac7425e0b:0x9dffe986cffedb63" data-role="button" data-icon="maps"> Find on Google Maps </a> 	
+		<a href="tel:0561732340"  data-role="button" data-icon="tel"> Call </a>	
+	</div>	
+	<hr/>
+	
+	<div id="notation">	
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>
